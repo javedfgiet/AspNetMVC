@@ -1,0 +1,63 @@
+﻿@model MvcDemo.Models.Employee
+
+@{
+    ViewBag.Title = "Employee Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+
+    <table border="1">
+        <tr>
+            <td><b>Employee ID</b></td>
+            <td>@Model.EmployeeId </td>
+        </tr>
+
+        <tr>
+            <td><b>Name</b></td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td><b>Gender</b></td>
+            <td>@Model.Gender</td>
+        </tr>
+        <tr>
+            <td><b>City</b></td>
+            <td>@Model.City</td>
+        </tr>
+
+    </table>
+    @*<dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+    </dl>*@
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
