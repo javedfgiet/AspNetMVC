@@ -33,12 +33,51 @@ namespace BusinessLayer
                         emp.Name = rdr["Name"].ToString();
                         emp.Gender = rdr["Gender"].ToString();
                         emp.City = rdr["City"].ToString();
-                        emp.DateOfBirth = Convert.ToDateTime(rdr["DatOfBirth"]);
+
+                        if (!(rdr["DatOfBirth"] is DBNull))
+                        {
+                            emp.DateOfBirth = Convert.ToDateTime(rdr["DatOfBirth"]);
+                        }
+
                         employees.Add(emp);
                     }
                 }
                 return employees;
             }
         }
+
+        public void AddEmployee(Employee emp)
+        {
+            string conStr = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(conStr))
+            {
+                SqlCommand cmd = new SqlCommand("spAddEmployee", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter paramName = new SqlParameter();
+                paramName.ParameterName = "@Name";
+                paramName.Value = emp.Name;
+                cmd.Parameters.Add(paramName);
+
+                SqlParameter paramGender = new SqlParameter();
+                paramGender.ParameterName = "@Gender";
+                paramGender.Value = emp.Gender;
+                cmd.Parameters.Add(paramGender);
+
+                SqlParameter paraCity = new SqlParameter();
+                paraCity.ParameterName = "@City";
+                paraCity.Value = emp.City;
+                cmd.Parameters.Add(paraCity);
+
+                SqlParameter paramDOB = new SqlParameter();
+                paramDOB.ParameterName = "@DateOfBirth";
+                paramDOB.Value = emp.DateOfBirth;
+                cmd.Parameters.Add(paramDOB);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }

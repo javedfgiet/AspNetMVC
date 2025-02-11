@@ -1,0 +1,20 @@
+﻿
+Home-->Index-->OnActionExecuting 	2/11/2025 6:11:58 PM
+
+Home-->Index-->OnActionExecuted 	2/11/2025 6:11:58 PM
+Home-->Index--> OnResultExecuting 	2/11/2025 6:11:58 PM
+Home-->Index--> OnResultExecuted 	2/11/2025 6:11:58 PM
+---------------------------------
+
+Home-->Index-->OnActionExecuting 	2/11/2025 6:12:45 PM
+
+Home-->Index-->OnActionExecuted 	2/11/2025 6:12:45 PM
+Home-->Index--> OnResultExecuting 	2/11/2025 6:12:45 PM
+Home-->Index--> OnResultExecuted 	2/11/2025 6:12:45 PM
+---------------------------------
+
+Home-->Welcome-->OnActionExecuting 	2/11/2025 6:12:55 PM
+
+Home-->Welcome-->OnActionExecuted 	2/11/2025 6:12:58 PM
+Home-->Welcome-->Exception occured	2/11/2025 6:12:58 PM
+------------------------------------------------

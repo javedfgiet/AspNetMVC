@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h4> Country Data</h4>
+
+
+@Html.ActionLink("List of Country","Countries", new { countryData = new List<string>() { "US", "UK", "India" } })
